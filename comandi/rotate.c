@@ -1,46 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.c                                          :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/11 19:22:46 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/11 19:24:37 by lciardo          ###   ########.fr       */
+/*   Created: 2026/02/12 14:03:26 by lciardo           #+#    #+#             */
+/*   Updated: 2026/02/12 14:40:42 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"push_swap.h"
 
-s_node	*ft_lstnew(int value)
+static void	rotate(t_node **stack)
 {
-	s_node	*node;
+	t_node	*temp;
 
-	node = malloc (sizeof(s_node));
-	if (!node)
-		return (NULL);
-	node -> value = value;
-	node -> next = NULL;
-	return (node);
+	if (!*stack || !(*stack)->next)
+		return ;
+	temp = *stack;
+	*stack = (*stack)->next;
+	temp->next = NULL;
+	ft_lstadd_back(stack, temp);
 }
 
-s_node	*ft_lstlast(s_node *lst)
+
+void	ra(t_node **stack_a)
 {
-	if (!lst)
-		return (NULL);
-	while (lst -> next != NULL)
-		lst = lst -> next;
-	return (lst);
+	rotate(stack_a);
+	write(1, "ra\n", 3);
 }
 
-void	ft_lstadd_back(s_node **lst, s_node *new)
+void	rb(t_node **stack_b)
 {
-	if (!lst || !new)
-		return ;
-	if (!*lst)
-	{
-		*lst = new;
-		return ;
-	}
-	ft_lstlast(*lst)->next = new;
+	rotate(stack_b);
+	write(1, "rb\n", 3);
+}
+
+void	rr(t_node **stack_a, t_node **stack_b)
+{
+	rotate(stack_a);
+	rotate(stack_b);
+	write(1, "rr\n", 3);
 }

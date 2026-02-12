@@ -6,7 +6,7 @@
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 15:15:12 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/11 19:54:21 by lciardo          ###   ########.fr       */
+/*   Updated: 2026/02/12 17:38:41 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,30 @@ static void	ft_error (char **str, int y)
 	exit(1);
 }
 
+void	check_duplicates(t_node *stack)
+{
+	t_node	*current;
+	t_node	*check;
 
-static	int	intostack(char	**str, s_node **stack_a)
+	current = stack;
+	while (current)
+	{
+		check = current->next;
+		while (check)
+		{
+			if (current->value == check->value)
+				free_stack(&stack);
+			check = check->next;
+		}
+		current = current->next;
+	}
+}
+static	int	intostack(char	**str, t_node **stack_a)
 {
 	long	x;
 	long	tempnumb;
-	s_node	*newnode;
-	s_node	*tempnode;
-	
+	t_node	*newnode;
+
 	x = 0;
 	while(str[x])
 	{
@@ -42,13 +58,15 @@ static	int	intostack(char	**str, s_node **stack_a)
 	return (x);
 }
 
-void	putinstack(char *argv, s_node	**stack_a)
+void	putinstack(char *argv, t_node **stack_a)
 {
 	char	**str;
 	int		x;
+
 	str = ft_split (argv, ' ');
 	x = intostack (str, stack_a);
 	while (x--)
 		free(str[x]);
 	free(str);
+	check_duplicates(*stack_a);
 }

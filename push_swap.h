@@ -6,7 +6,7 @@
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 09:10:54 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/11 19:24:55 by lciardo          ###   ########.fr       */
+/*   Updated: 2026/02/12 16:56:12 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,33 @@ typedef struct s_node
 {
 	int			value;
 	struct s_node	*next;
-}	s_node;
+}	t_node;
 
 void	controlnumb(char *argv);
 char	**ft_split(char const *s, char c);
-void	putinstack(char *argv, s_node	**stack_a);
+void	putinstack(char *argv, t_node	**stack_a);
 long	ft_atoi(char *str);
-s_node	*ft_lstnew(int value);
-s_node	*ft_lstlast(s_node *lst);
-void	ft_lstadd_back(s_node **lst, s_node *new);
-
-
-
-
-
-
-
+t_node	*ft_lstnew(int value);
+t_node	*ft_lstlast(t_node *lst);
+void	ft_lstadd_back(t_node **lst, t_node *new);
+void	free_stack(t_node **stack);
+void	ft_errorr();
+long	ft_lstsize(t_node *lst);
+void	sa(t_node **stack_a);
+void	sb(t_node **stack_b);
+void	ss(t_node **stack_a, t_node **stack_b);
+void	pa(t_node **stack_a, t_node **stack_b);
+void	pb(t_node **stack_b, t_node **stack_a);
+void	rr(t_node **stack_a, t_node **stack_b);
+void	rb(t_node **stack_b);
+void	ra(t_node **stack_a);
+void	rra(t_node **stack_a);
+void	rrb(t_node **stack_b);
+void	rrr(t_node **stack_a, t_node **stack_b);
+void	matrixx(t_node **stack_a, t_node **stack_b);
+void	ft_lstadd_front(t_node **lst, t_node *new);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+size_t	ft_strlen(const char *str);
 
 
 #endif

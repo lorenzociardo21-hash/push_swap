@@ -1,45 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   control_argv.c                                     :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/11 10:58:24 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/11 15:04:04 by lciardo          ###   ########.fr       */
+/*   Created: 2026/02/12 16:50:19 by lciardo           #+#    #+#             */
+/*   Updated: 2026/02/12 16:51:11 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"push_swap.h"
 
-static void ft_error()
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	write (2, "Error\n", 6);
-	exit(1);
-}
+	char	*sub;
+	size_t	x;
+	size_t	s_len;
 
-static void controlcaracter(char *argv)
-{
-	long	x;
-	
+	if (!s)
+		return (NULL);
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+		len = 0;
+	else if (len > s_len - start)
+		len = s_len - start;
+	sub = malloc ((len + 1) * sizeof(char));
+	if (!sub)
+		return (NULL);
 	x = 0;
-	while (argv[x])
+	while (s[x + start] && x < (len))
 	{
-		if (argv[x] != '+' && argv[x] != '-' && argv[x] != ' ' && (argv[x] < '0' || argv[x] > '9'))
-			ft_error();
+		sub[x] = s[x + start];
 		x++;
 	}
-}
-
-void	controlnumb(char *argv)
-{
-	long	x;
-	controlcaracter(argv);
-	x = 0;
-	while (argv[x])
-	{
-		if ((argv[x] == '+' || argv[x] == '-') && (argv[x + 1] < '0' || argv[x + 1] > '9'))
-			ft_error();
-		x++;
-	}
+	sub[x] = '\0';
+	return (&sub[0]);
 }

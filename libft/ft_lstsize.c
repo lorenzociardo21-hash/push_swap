@@ -1,41 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/11 16:45:09 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/11 16:45:23 by lciardo          ###   ########.fr       */
+/*   Created: 2026/02/12 11:50:03 by lciardo           #+#    #+#             */
+/*   Updated: 2026/02/12 12:46:02 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"push_swap.h"
 
-long	ft_atoi(char *str)
+long	ft_lstsize(t_node *lst)
 {
-	long	x;
-	long	s;
-	long	n;
+	long	count;
 
-	if (!str)
-		return 	(NULL);
-	x = 0;
-	n = 0;
-	s = 1;
-	while (str[x] == ' ' || (str[x] >= 9 && str[x] <= 13))
-		x++;
-	if (str[x] == '-' || str[x] == '+')
+	count = 0;
+	while (lst)
 	{
-		if (str[x] == '-')
-			s = s * -1;
-		x++;
+		lst = lst -> next;
+		count ++;
 	}
-	while (str[x] >= '0' && str[x] <= '9')
-	{
-		n = n * 10 + (str[x] - '0');
-		x++;
-	}
-	n = n * s;
-	return (n);
+	return (count);
 }
