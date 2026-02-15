@@ -6,7 +6,7 @@
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 09:10:54 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/12 16:56:12 by lciardo          ###   ########.fr       */
+/*   Updated: 2026/02/15 10:32:55 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 typedef struct s_node
 {
 	int			value;
+	int			index;
 	struct s_node	*next;
 }	t_node;
 
@@ -50,6 +51,7 @@ void	matrixx(t_node **stack_a, t_node **stack_b);
 void	ft_lstadd_front(t_node **lst, t_node *new);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlen(const char *str);
+void	index(t_node **stack);
 
 
 #endif

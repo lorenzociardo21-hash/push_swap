@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   matrix.c                                           :+:      :+:    :+:   */
+/*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/12 15:29:55 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/15 10:33:23 by lciardo          ###   ########.fr       */
+/*   Created: 2026/02/15 09:41:45 by lciardo           #+#    #+#             */
+/*   Updated: 2026/02/15 10:31:44 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"push_swap.h"
 
-static void	resolve2(t_node **stack_a)
+void	index(t_node **stack)
 {
-	if ((*stack_a)->value > (*stack_a)->next->value)
-		sa(stack_a);
-}
+	t_node	*current;
+	t_node	*check;
+	int		ind;
 
-static void	resolve3(t_node **stack_a)
-{
-	if ((*stack_a)->value > (*stack_a)->next->value)
-		sa(stack_a);
-}
-
-void	matrixx(t_node **stack_a, t_node **stack_b)
-{
-	long	x;
-	(void)stack_b;
-	
-	x = ft_lstsize(*stack_a);
-	if (x == 2)
-		resolve2(stack_a);
-	if (x == 3)
-		resolve3(stack_a);
-	index(stack_a);
+	current = *stack;
+	while (current)
+	{
+		check = *stack;
+		ind = 0;
+		while (check)
+		{
+			if (current->value > check->value)
+				ind++;
+			check = check->next;
+		}
+		current->index = ind;
+		current = current->next;
+	}
 }
