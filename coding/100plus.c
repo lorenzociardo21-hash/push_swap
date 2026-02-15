@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   100plus.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/12 12:32:40 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/15 12:26:26 by lciardo          ###   ########.fr       */
+/*   Created: 2026/02/15 11:27:41 by lciardo           #+#    #+#             */
+/*   Updated: 2026/02/15 12:30:05 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"push_swap.h"
 
-static void	push(t_node **stack_a, t_node **stack_b)
+void	putinb(t_node **stack_a, t_node **stack_b)
 {
-	t_node	*swapper;
+	int 	i;
+	int 	window;
 
-	if (!*stack_b)
-		return;
-	swapper = *stack_b;
-	*stack_b = (*stack_b)->next;
-	swapper->next = NULL;
-	ft_lstadd_front(stack_a,swapper);
-	
+	window = findwindow (stack_a);
+	i = 0;
+	while (*stack_a)
+	{
+		if ((*stack_a)->index <= i)
+		{
+			pb(stack_b, stack_a);
+			if (ft_lstsize(*stack_b) > 1)
+				rb(stack_b);
+			i ++;
+		}
+		else if ((*stack_a)->index <= i + window)
+		{
+			pb(stack_b, stack_a);
+			i++;
+		}
+		else
+			ra(stack_a);
+	}
 }
-
-void	pa(t_node **stack_a, t_node **stack_b)
-{
-	push(stack_a, stack_b);
-	write(1, "pa\n", 3);
-}
-
-void	pb(t_node **stack_b, t_node **stack_a)
-{
-	push(stack_b, stack_a);
-	write(1, "pb\n", 3);
-}
-
