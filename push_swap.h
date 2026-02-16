@@ -6,7 +6,7 @@
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 09:10:54 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/15 12:18:11 by lciardo          ###   ########.fr       */
+/*   Updated: 2026/02/16 13:10:21 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,13 @@ void	matrixx(t_node **stack_a, t_node **stack_b);
 void	ft_lstadd_front(t_node **lst, t_node *new);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlen(const char *str);
-void	index(t_node **stack);
+void	indexx(t_node **stack);
 int		findwindow(t_node **stack);
 void	putinb(t_node **stack_a, t_node **stack_b);
-
+int		get_pos(t_node **stack_b, int numb);
+void	putina(t_node **stack_a, t_node **stack_b);
+void	resolve100plus(t_node **stack_a, t_node **stack_b);
+void	ft_lstclear(t_node **lst, void (*del)(void*));
+void	ft_lstdelone(t_node *lst, void (*del)(void*));
 
 #endif

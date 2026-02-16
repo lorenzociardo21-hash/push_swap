@@ -1,42 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_listclear.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/11 10:29:08 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/16 13:02:29 by lciardo          ###   ########.fr       */
+/*   Created: 2026/02/16 12:39:42 by lciardo           #+#    #+#             */
+/*   Updated: 2026/02/16 12:40:14 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"push_swap.h"
 
-static void	del_node(void *content)
+void	ft_lstclear(t_node **lst, void (*del)(void*))
 {
-	(void)content;
+	t_node	*temp;
+
+	if (!lst || !del)
+		return ;
+	while (*lst)
+	{
+		temp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = temp;
+	}
 }
-
-int	main(int argc, char *argv[])
-{
-	t_node	*stack_a;
-	t_node	*stack_b;
-	int		x;
-
-	stack_a = NULL;
-	stack_b = NULL;
-	if (argc == 1)
-		return (0);
-	x = 0;
-	while (++x < argc)
-		controlnumb(argv[x]);
-	x = 0;
-	while (++x < argc)
-		putinstack(argv[x], &stack_a);
-	matrixx(&stack_a, &stack_b);
-	ft_lstclear(&stack_a, del_node);
-	ft_lstclear(&stack_b, del_node);
-	return (0);
-}
-
- 
