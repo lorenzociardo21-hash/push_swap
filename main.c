@@ -6,11 +6,11 @@
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 10:29:08 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/16 13:02:29 by lciardo          ###   ########.fr       */
+/*   Updated: 2026/02/23 13:02:18 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"push_swap.h"
+#include "push_swap.h"
 
 static void	del_node(void *content)
 {
@@ -38,5 +38,3 @@ int	main(int argc, char *argv[])
 	ft_lstclear(&stack_b, del_node);
 	return (0);
 }
-
- 

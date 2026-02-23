@@ -6,11 +6,11 @@
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 19:22:46 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/12 11:50:13 by lciardo          ###   ########.fr       */
+/*   Updated: 2026/02/23 12:55:03 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"push_swap.h"
+#include "push_swap.h"
 
 t_node	*ft_lstnew(int value)
 {
@@ -59,4 +59,3 @@ void	free_stack(t_node **stack)
 	}
 	ft_errorr();
 }
-

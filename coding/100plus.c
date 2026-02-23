@@ -6,19 +6,19 @@
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 11:27:41 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/16 12:05:38 by lciardo          ###   ########.fr       */
+/*   Updated: 2026/02/23 12:40:35 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"push_swap.h"
+#include "push_swap.h"
 
 int	findwindow(t_node **stack)
 {
-	int x;
-	int window;
+	int	x;
+	int	window;
 
 	x = ft_lstsize(*stack);
-	if ( x <= 100)
+	if (x <= 100)
 		window = 15;
 	if (x >= 101 && x <= 200)
 		window = 23;
@@ -33,8 +33,8 @@ int	findwindow(t_node **stack)
 
 void	putinb(t_node **stack_a, t_node **stack_b)
 {
-	int 	i;
-	int 	window;
+	int	i;
+	int	window;
 
 	window = findwindow (stack_a);
 	i = 0;
@@ -45,7 +45,7 @@ void	putinb(t_node **stack_a, t_node **stack_b)
 			pb(stack_b, stack_a);
 			if (ft_lstsize(*stack_b) > 1)
 				rb(stack_b);
-			i ++;
+			i++;
 		}
 		else if ((*stack_a)->index <= i + window)
 		{
@@ -61,10 +61,10 @@ int	get_pos(t_node **stack_b, int numb)
 {
 	int		x;
 	t_node	*curr;
-	
+
 	curr = *stack_b;
 	x = 0;
-	while(curr)
+	while (curr)
 	{
 		if ((curr)->index == numb)
 			return (x);
@@ -92,7 +92,7 @@ void	putina(t_node **stack_a, t_node **stack_b)
 		}
 		else
 		{
-			pos = size - pos; 
+			pos = size - pos;
 			while (pos--)
 				rrb(stack_b);
 		}

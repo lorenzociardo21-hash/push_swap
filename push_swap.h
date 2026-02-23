@@ -6,7 +6,7 @@
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 09:10:54 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/16 13:10:21 by lciardo          ###   ########.fr       */
+/*   Updated: 2026/02/23 13:03:14 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 
 typedef struct s_node
 {
-	int			value;
-	int			index;
+	int				value;
+	int				index;
 	struct s_node	*next;
 }	t_node;
 
@@ -34,7 +34,7 @@ t_node	*ft_lstnew(int value);
 t_node	*ft_lstlast(t_node *lst);
 void	ft_lstadd_back(t_node **lst, t_node *new);
 void	free_stack(t_node **stack);
-void	ft_errorr();
+void	ft_errorr(void);
 long	ft_lstsize(t_node *lst);
 void	sa(t_node **stack_a);
 void	sb(t_node **stack_b);

@@ -6,11 +6,11 @@
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 12:42:03 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/16 12:46:56 by lciardo          ###   ########.fr       */
+/*   Updated: 2026/02/23 12:55:52 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"push_swap.h"
+#include "push_swap.h"
 
 void	ft_lstdelone(t_node *lst, void (*del)(void*))
 {

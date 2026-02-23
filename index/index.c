@@ -6,11 +6,11 @@
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 09:41:45 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/16 12:05:16 by lciardo          ###   ########.fr       */
+/*   Updated: 2026/02/23 12:53:20 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"push_swap.h"
+#include "push_swap.h"
 
 void	indexx(t_node **stack)
 {

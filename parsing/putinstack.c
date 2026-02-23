@@ -6,19 +6,19 @@
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 15:15:12 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/12 17:38:41 by lciardo          ###   ########.fr       */
+/*   Updated: 2026/02/23 13:00:38 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"push_swap.h"
+#include "push_swap.h"
 
-static void	ft_error (char **str, int y)
+static void	ft_error(char **str, int y)
 {
 	while (y--)
-		free(str[y]);
-	free(str);
+		free (str[y]);
+	free (str);
 	write (2, "Error\n", 6);
-	exit(1);
+	exit (1);
 }
 
 void	check_duplicates(t_node *stack)
@@ -33,12 +33,13 @@ void	check_duplicates(t_node *stack)
 		while (check)
 		{
 			if (current->value == check->value)
-				free_stack(&stack);
+				free_stack (&stack);
 			check = check->next;
 		}
 		current = current->next;
 	}
 }
+
 static	int	intostack(char	**str, t_node **stack_a)
 {
 	long	x;
@@ -46,13 +47,13 @@ static	int	intostack(char	**str, t_node **stack_a)
 	t_node	*newnode;
 
 	x = 0;
-	while(str[x])
+	while (str[x])
 	{
-		tempnumb = ft_atoi(str[x]);
+		tempnumb = ft_atoi (str[x]);
 		if (tempnumb > INT_MAX || tempnumb < INT_MIN)
 			ft_error (str, x);
-		newnode = ft_lstnew((int) tempnumb);
-		ft_lstadd_back(stack_a, newnode);
+		newnode = ft_lstnew ((int) tempnumb);
+		ft_lstadd_back (stack_a, newnode);
 		x++;
 	}
 	return (x);
@@ -66,7 +67,7 @@ void	putinstack(char *argv, t_node **stack_a)
 	str = ft_split (argv, ' ');
 	x = intostack (str, stack_a);
 	while (x--)
-		free(str[x]);
-	free(str);
-	check_duplicates(*stack_a);
+		free (str[x]);
+	free (str);
+	check_duplicates (*stack_a);
 }

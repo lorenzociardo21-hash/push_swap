@@ -6,19 +6,19 @@
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 11:32:34 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/15 11:51:33 by lciardo          ###   ########.fr       */
+/*   Updated: 2026/02/23 12:45:45 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"push_swap.h"
+#include "push_swap.h"
 
 int	findwindow(t_node **stack)
 {
-	int x;
-	int window;
+	int	x;
+	int	window;
 
 	x = ft_lstsize(*stack);
-	if ( x <= 100)
+	if (x <= 100)
 		window = 15;
 	if (x >= 101 && x <= 200)
 		window = 23;

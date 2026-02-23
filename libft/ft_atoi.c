@@ -6,11 +6,11 @@
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 16:45:09 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/12 16:46:44 by lciardo          ###   ########.fr       */
+/*   Updated: 2026/02/23 12:55:08 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"push_swap.h"
+#include "push_swap.h"
 
 long	ft_atoi(char *str)
 {
@@ -19,7 +19,7 @@ long	ft_atoi(char *str)
 	long	n;
 
 	if (!str)
-		return 	(0);
+		return (0);
 	x = 0;
 	n = 0;
 	s = 1;
