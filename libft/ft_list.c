@@ -6,7 +6,7 @@
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 19:22:46 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/23 12:55:03 by lciardo          ###   ########.fr       */
+/*   Updated: 2026/02/24 13:15:26 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,4 @@ void	free_stack(t_node **stack)
 		free(*stack);
 		*stack = temp;
 	}
-	ft_errorr();
 }

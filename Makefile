@@ -6,7 +6,7 @@
 #    By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/12 17:31:43 by lciardo           #+#    #+#              #
-#    Updated: 2026/02/16 12:46:19 by lciardo          ###   ########.fr        #
+#    Updated: 2026/02/24 13:20:53 by lciardo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,10 @@ CFLAGS		=	-Wall -Wextra -Werror -I.
 
 # Sorgenti divisi per cartella per chiarezza
 SRC_MAIN	=	main.c
-SRC_CODING	=	coding/matrix.c coding/100plus.c
+SRC_CODING	=	coding/matrix.c coding/100plus.c coding/window.c
 SRC_COMANDI	=	comandi/push.c comandi/reverserotate.c comandi/rotate.c comandi/swap.c
 SRC_LIBFT	=	libft/ft_atoi.c libft/ft_list.c libft/ft_lstsize.c libft/ft_split.c \
-				libft/ft_strlen.c libft/ft_substr.c libft/listaddfront.c libft/ft_listclear.c \
-				libft/listdelone.c
+				libft/ft_strlen.c libft/ft_substr.c libft/listaddfront.c
 SRC_PARSING	=	parsing/control_argv.c parsing/putinstack.c
 SRC_INDEX	=	index/index.c
 

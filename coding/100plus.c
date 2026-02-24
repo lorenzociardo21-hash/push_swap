@@ -6,30 +6,11 @@
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 11:27:41 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/23 12:40:35 by lciardo          ###   ########.fr       */
+/*   Updated: 2026/02/23 14:35:19 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	findwindow(t_node **stack)
-{
-	int	x;
-	int	window;
-
-	x = ft_lstsize(*stack);
-	if (x <= 100)
-		window = 15;
-	if (x >= 101 && x <= 200)
-		window = 23;
-	if (x >= 201 && x <= 300)
-		window = 30;
-	if (x >= 301 && x <= 400)
-		window = 37;
-	if (x >= 401)
-		window = 43;
-	return (window);
-}
 
 void	putinb(t_node **stack_a, t_node **stack_b)
 {

@@ -6,7 +6,7 @@
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 11:32:34 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/23 12:45:45 by lciardo          ###   ########.fr       */
+/*   Updated: 2026/02/23 14:30:07 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,17 @@ int	findwindow(t_node **stack)
 	if (x >= 401)
 		window = 43;
 	return (window);
+}
+
+int	is_sorted(t_node *stack)
+{
+	if (!stack)
+		return (1);
+	while (stack->next)
+	{
+		if (stack->index > stack->next->index)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
 }

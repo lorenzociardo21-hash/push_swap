@@ -6,16 +6,11 @@
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 10:29:08 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/23 13:02:18 by lciardo          ###   ########.fr       */
+/*   Updated: 2026/02/24 12:51:08 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	del_node(void *content)
-{
-	(void)content;
-}
 
 int	main(int argc, char *argv[])
 {
@@ -34,7 +29,7 @@ int	main(int argc, char *argv[])
 	while (++x < argc)
 		putinstack(argv[x], &stack_a);
 	matrixx(&stack_a, &stack_b);
-	ft_lstclear(&stack_a, del_node);
-	ft_lstclear(&stack_b, del_node);
+	free_stack(&stack_a);
+	free_stack(&stack_b);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 09:10:54 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/23 13:03:14 by lciardo          ###   ########.fr       */
+/*   Updated: 2026/02/24 13:20:20 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_node	*ft_lstnew(int value);
 t_node	*ft_lstlast(t_node *lst);
 void	ft_lstadd_back(t_node **lst, t_node *new);
 void	free_stack(t_node **stack);
-void	ft_errorr(void);
+void	ft_error(char **str, int y, t_node **stack);
 long	ft_lstsize(t_node *lst);
 void	sa(t_node **stack_a);
 void	sb(t_node **stack_b);
@@ -58,6 +58,7 @@ int		get_pos(t_node **stack_b, int numb);
 void	putina(t_node **stack_a, t_node **stack_b);
 void	resolve100plus(t_node **stack_a, t_node **stack_b);
 void	ft_lstclear(t_node **lst, void (*del)(void*));
-void	ft_lstdelone(t_node *lst, void (*del)(void*));
+int		is_sorted(t_node *stack);
+void	check_duplicates(t_node **stack);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 15:29:55 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/23 12:44:59 by lciardo          ###   ########.fr       */
+/*   Updated: 2026/02/23 14:30:43 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,8 @@ void	matrixx(t_node **stack_a, t_node **stack_b)
 	long	x;
 
 	indexx(stack_a);
+	if (is_sorted(*stack_a))
+		return ;
 	x = ft_lstsize(*stack_a);
 	if (x == 2)
 		resolve2(stack_a);
