@@ -6,7 +6,7 @@
 /*   By: lciardo <lciardo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 15:15:12 by lciardo           #+#    #+#             */
-/*   Updated: 2026/02/24 15:34:06 by lciardo          ###   ########.fr       */
+/*   Updated: 2026/02/25 17:08:44 by lciardo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_error(char **str, int y, t_node **stack)
 {
-	(void) y;
 	int	i;
 
+	(void) y;
 	i = 0;
 	if (str)
 	{
@@ -71,7 +71,7 @@ static	int	intostack(char	**str, t_node **stack_a)
 			ft_error (str, x, stack_a);
 		newnode = ft_lstnew ((int) tempnumb);
 		if (!newnode)
-    		ft_error(str, x, stack_a);
+			ft_error (str, x, stack_a);
 		ft_lstadd_back (stack_a, newnode);
 		x++;
 	}
